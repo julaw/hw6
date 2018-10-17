@@ -1,8 +1,21 @@
 import re
 import unittest
 
+file1='regex_sum_42.txt'
+
 def sumNums(fileName):
-    pass
+    file=open(fileName)
+    count = 0
+    for line in file:
+        line = line.rstrip()
+        x = re.findall('[0-9]+', line)
+        for num in x:
+            count+= int(num)
+    return count
+
+
+sumNums(file1) 
+
 
 def countWord(fileName, word):
     pass
